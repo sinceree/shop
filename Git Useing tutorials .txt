@@ -1,0 +1,43 @@
+git使用教程
+
+1.首次使用git所做的工作：
+git config --global user.name "用户名"
+git config --global user.email "邮箱名"
+
+2.仓库操作
+mkdir 仓库名		//创建仓库名
+cd 仓库名			//进入仓库
+git init			//仓库初始化
+
+3.日常操作
+git status			//查看当前状态
+git add .			//添加当前目录至缓存区
+git add 文件名1 文件名2	//添加文件至缓冲区
+git commit -m "注释"	//添加版本更新注释
+
+4.版本回退
+git log			//查看版本
+git log --pretty=oneline	//查看版本
+git reset --hard 编号	//回退操作
+git reflog			//查看回退操作执行前的所有版本
+
+5.线上操作
+ssh-keygen -t rsa -C "邮箱名"		//创建公私密钥对文件
+git clone 地址		//克隆线上操作到本地
+git push			//本地文件提交至线上仓库
+git pull			//拉取线上仓库至本地
+
+6.分支操作
+git branch		//查看分支
+git branch 分支名		//创建分支
+git checkout 分支名		//切换分支
+git branch -d 分支名	//删除分支
+git merge 被合并分支	//合并分支，合并时，需要退出被合并的分支
+
+7.忽略文件
+利用touch命令创建 .gitignore 文件
+常用书写规则：
+		/文件夹名/	忽略整个文件夹
+		*zip		过滤所有.zip文件
+		/文件夹名/文件名	过滤某个具体文件
+		!文件名		不过滤具体某个文件
